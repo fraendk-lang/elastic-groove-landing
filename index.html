@@ -409,5 +409,13 @@
   <div class="footer-note">by Elastic Field &middot; elasticgroove.app</div>
 </footer>
 
+<script>
+  // Unregister any service workers left over from a previous PWA on this domain
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(regs => {
+      regs.forEach(r => r.unregister());
+    });
+  }
+</script>
 </body>
 </html>
